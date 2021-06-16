@@ -1,0 +1,44 @@
+**Description of the algorithm**
+Variables
+TempReal	Real temperature outdoor
+HumReal	Real humidity outdoor
+TempMax	maximum temperature set indoor
+TempMin	minimum temperature set indoor
+HumMax	maximum humidity set indoor
+HumMin	minimum humidity set indoor
+RoomDim	Room dimensions
+Distance	recommended interpersonal distance
+CriticalMaxHum, CriticalMaxHum	critical humidity values indoors maximum and minimum respectively
+RTemp		temperature sensor in the room 
+RHum		humidity sensor in the room
+Ventilation, Humidifier dehumidifier Heating	actuator states in the room (ON/OFF)
+Clock	time during which the dehumidifier is ON, critical value 2 hours.
+EC	Estimated Capacity of people with respect to humidity and room dimensions
+
+Event
+Clock.reset	set the clock in zero
+Humidity alert 1	Humidity could not be reduced
+Humidity alert 2	The value of the humidity in the room is critical
+Increase distancing	the capacity of the establishment has decreased, please increase the distancing
+
+Get values of temperature and humidity obtained outdoors, and room dimensions. Declare variables for maximum and minimum temperature and humidity ranges indoors
+Set:
+Value of minimum humidity indoors 47%
+Minimum humidity critical value 40%
+Maximum humidity critical value 65%
+Decide season, winter or summer based on temperature outdoors to set temperature and humidity ranges to keep indoors.
+If the temperature outdoors is higher or equal to 24º Celsius. Set:
+Maximum temperature 23º
+Minimum temperature 22º
+Maximum humidity 50%
+Else, the temperature is less than 24º. Set:
+Maximum temperature 26º
+Minimum temperature 24º
+Maximum humidity 55%
+Get values of temperature and humidity indoors
+If the census temperature is less than the minimum temperature, the heating state changes to “ON”, else, if the value of the census temperature is greater than the maximum temperature the ventilation state changes to “ON”, otherwise the heating and ventilation states will be “OFF”.
+If the census Humidity is less than the minimum humidity, the value of the humidifier changes to “ON”, else, if the value of the census humidity is greater than the maximum humidity, the value of the dehumidifier changes to “ON” and the clock that indicates the operating time of this actuator is activated, also, when the value of the clock exceeds 2  hours, the “Humidity Alert 1” is sent, this alert indicates that the humidity inside has not been able to be reduced, otherwise the state of the humidifier and dehumidifier change to “OFF” and the clock will be reset.
+If the census Humidity is less than the minimum humidity critical value OR greater than the maximum humidity critical value, the “Humidity Alert 2” and “Increase distancing” are sent, this indicates that the humidity value indoors is critical, the interpersonal distancing should be increased and the estimated capacity of people in the establishment has decreased. In this case, the recommended distance is set to 2 meters. Otherwise, the recommended distance is set to 1.5 meters.
+The estimated capacity calculated, is equal to the dimension of room in square meters, divided for the recommended distance plus 0.2 in meters.
+The following message is printed
+“The estimated capacity of people within the establishment is: “+ EC (Estimated capacity)
