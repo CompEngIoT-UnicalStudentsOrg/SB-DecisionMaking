@@ -34,6 +34,7 @@ Declare variables for maximum and minimum temperature and humidity ranges indoor
 * Maximum temperature 23º
 * Minimum temperature 22º
 * Maximum humidity 50%
+
   2. Else, the temperature is less than 24º. Set:
 * Maximum temperature 26º
 * Minimum temperature 24º
