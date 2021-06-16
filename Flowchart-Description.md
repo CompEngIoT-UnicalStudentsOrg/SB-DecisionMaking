@@ -1,27 +1,28 @@
 
 # DESCRIPTION OF THE ALGORITHM
 ## Variables
-TempReal	Real temperature outdoor
-HumReal	Real humidity outdoor
-TempMax	maximum temperature set indoor
-TempMin	minimum temperature set indoor
-HumMax	maximum humidity set indoor
-HumMin	minimum humidity set indoor
-RoomDim	Room dimensions
-Distance	recommended interpersonal distance
-CriticalMaxHum, CriticalMaxHum	critical humidity values indoors maximum and minimum respectively
-RTemp		temperature sensor in the room 
-RHum		humidity sensor in the room
-Ventilation, Humidifier dehumidifier Heating	actuator states in the room (ON/OFF)
-Clock	time during which the dehumidifier is ON, critical value 2 hours.
-EC	Estimated Capacity of people with respect to humidity and room dimensions
+* **TempReal**  Real temperature outdoor
+* **HumReal**   Real humidity outdoor
+* **TempMax** 	Maximum temperature set indoor
+* **TempMin** 	Minimum temperature set indoor
+* **HumMax**  	Maximum humidity set indoor
+* **HumMin**	  Minimum humidity set indoor
+* **RoomDim** 	Room dimensions
+* **Distance**	Recommended interpersonal distance
+* **RTemp** 		Temperature sensor in the room 
+* **RHum**  		Humidity sensor in the room
+* **CriticalMaxHum, CriticalMaxHum**	          Critical humidity values indoors maximum and minimum respectively
+* **Ventilation, Humidifier, dehumidifier, Heating**  	actuator states in the room (ON/OFF)
+* **Clock**     Time during which the dehumidifier is ON, critical value 2 hours.
+* **EC**	      Estimated Capacity of people with respect to humidity and room dimensions
 
-Event
-Clock.reset	set the clock in zero
-Humidity alert 1	Humidity could not be reduced
-Humidity alert 2	The value of the humidity in the room is critical
-Increase distancing	the capacity of the establishment has decreased, please increase the distancing
+## Events
+**Clock.reset** 	    set the clock in zero
+**Humidity alert 1**	_Humidity could not be reduced_ message
+**Humidity alert 2**	_The value of the humidity in the room is critical_ message
+**Increase distancing**	_the capacity of the establishment has decreased, please increase the distancing_ message
 
+## Instructions
 Get values of temperature and humidity obtained outdoors, and room dimensions. Declare variables for maximum and minimum temperature and humidity ranges indoors
 Set:
 Value of minimum humidity indoors 47%
