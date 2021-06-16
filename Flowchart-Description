@@ -1,5 +1,6 @@
-**Description of the algorithm**
-Variables
+
+# DESCRIPTION OF THE ALGORITHM
+## Variables
 TempReal	Real temperature outdoor
 HumReal	Real humidity outdoor
 TempMax	maximum temperature set indoor
