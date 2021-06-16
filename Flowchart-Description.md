@@ -76,4 +76,4 @@
 The estimated capacity calculated, is equal to the dimension of room in square meters, divided for the recommended distance plus 0.2 in meters.
 
 ### 9. Print Message
-* _“The estimated capacity of people within the establishment is: “_ + **EC** (Estimated capacity)
+ _“The estimated capacity of people within the establishment is: “_ + **EC** (Estimated capacity)
