@@ -23,22 +23,22 @@
 * **Increase distancing**	_the capacity of the establishment has decreased, please increase the distancing_ message
 
 ## Instructions
-1. Get values of temperature and humidity obtained outdoors, and room dimensions.
+### 1. Get values of temperature and humidity obtained outdoors, and room dimensions.
 Declare variables for maximum and minimum temperature and humidity ranges indoors
-2. Set:
+### 2. Set:
 * Value of minimum humidity indoors 47%
 * Minimum humidity critical value 40%
 * Maximum humidity critical value 65%
-3. Decide season, winter or summer based on temperature outdoors to set temperature and humidity ranges to keep indoors.
-If the temperature outdoors is higher or equal to 24º Celsius. Set:
+### 3. Decide season, winter or summer based on temperature outdoors to set temperature and humidity ranges to keep indoors.
+  1. If the temperature outdoors is higher or equal to 24º Celsius. Set:
 * Maximum temperature 23º
 * Minimum temperature 22º
 * Maximum humidity 50%
-Else, the temperature is less than 24º. Set:
+  2. Else, the temperature is less than 24º. Set:
 * Maximum temperature 26º
 * Minimum temperature 24º
 * Maximum humidity 55%
-4. Get values of temperature and humidity indoors
+### 4. Get values of temperature and humidity indoors
 5. If the census temperature is less than the minimum temperature
 * the heating state changes to “ON”
 else, if the value of the census temperature is greater than the maximum temperature
